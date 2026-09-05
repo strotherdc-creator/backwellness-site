@@ -4,7 +4,7 @@ import { site } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Services",
-  description: `Chiropractic care and wellness services at ${site.name}, including chiropractic, PiezoWave, spinal decompression, cold laser and LED therapy, postural screenings, nutrition, and detoxification.`,
+  description: `Chiropractic care and wellness services at ${site.name}, including chiropractic, PiezoWave, spinal decompression, cold laser and LED therapy, postural screenings, nutrition, wellness care, chiropractic for kids, and detoxification.`,
 };
 
 export default function ServicesPage() {
@@ -46,11 +46,9 @@ export default function ServicesPage() {
               <article className="card" key={service.title}>
                 <h3>{service.title}</h3>
                 <p className="muted">{service.description}</p>
-                {service.href !== "/services" ? (
-                  <Link href={service.href} className="btn btn-outline" style={{ marginTop: "0.5rem" }}>
-                    Learn more
-                  </Link>
-                ) : null}
+                <Link href={service.href} className="btn btn-outline" style={{ marginTop: "0.5rem" }}>
+                  Learn more
+                </Link>
               </article>
             ))}
           </div>

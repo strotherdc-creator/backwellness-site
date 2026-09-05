@@ -90,19 +90,31 @@ export const site = {
     },
     {
       title: "Postural Screenings",
-      href: "/services",
+      href: "/services/postural-screenings",
       description:
         "Screenings that help identify postural patterns that may contribute to discomfort.",
     },
     {
       title: "Nutrition",
-      href: "/services",
+      href: "/services/nutrition",
       description:
         "Guidance to support overall wellness as part of a personalized care plan.",
     },
     {
+      title: "Wellness Care",
+      href: "/services/wellness-care",
+      description:
+        "Preventive spinal care focused on mobility, nervous system function, and long-term wellness.",
+    },
+    {
+      title: "Chiropractic Care for Kids",
+      href: "/services/chiropractic-care-kids",
+      description:
+        "Gentle, noninvasive chiropractic care to support growing children and healthy development.",
+    },
+    {
       title: "Detoxification",
-      href: "/services",
+      href: "/services/detoxification",
       description:
         "Supportive detoxification approaches discussed as part of wellness care when appropriate.",
     },
