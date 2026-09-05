@@ -2,7 +2,7 @@ export const site = {
   name: "Staudenmaier Chiropractic Wellness Center, SC",
   shortName: "Staudenmaier Chiropractic",
   tagline: "GET YOUR LIFESTYLE BACK!",
-  domain: "backtowellness.org",
+  domain: "backwellness-site.vercel.app",
   sourceSite: "https://www.backtowellness.org",
   email: "DrLuke@backtowellness.org",
   doctor: {
