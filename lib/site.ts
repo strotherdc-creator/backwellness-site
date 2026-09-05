@@ -65,6 +65,12 @@ export const site = {
   ],
   services: [
     {
+      title: "Chiropractic Care",
+      href: "/services/chiropractic",
+      description:
+        "Spinal alignment and nervous system-focused care for muscle strain, neck and back pain, headaches, and more.",
+    },
+    {
       title: "PiezoWave (MyACT)",
       href: "/services/piezowave",
       description:

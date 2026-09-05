@@ -4,7 +4,7 @@ import { site } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Services",
-  description: `Chiropractic services at ${site.name}, including PiezoWave, spinal decompression, cold laser and LED therapy, postural screenings, nutrition, and detoxification.`,
+  description: `Chiropractic care and wellness services at ${site.name}, including chiropractic, PiezoWave, spinal decompression, cold laser and LED therapy, postural screenings, nutrition, and detoxification.`,
 };
 
 export default function ServicesPage() {
