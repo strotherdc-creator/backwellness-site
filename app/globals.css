@@ -855,3 +855,120 @@ ul {
     justify-content: center;
   }
 }
+
+
+/* Dark mode — BTW blues, AA-friendly contrast */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --blue-900: #8ec5ef;
+    --blue-600: #4aa3e0;
+    --blue-500: #2b8fd6;
+    --ink: #e8eef4;
+    --ink-soft: #c5d0db;
+    --surface: #121a22;
+    --surface-2: #18222c;
+    --white: #0d141b;
+    --accent: #f0c14d;
+    --line: rgba(142, 197, 239, 0.18);
+    --shadow: 0 18px 40px rgba(0, 0, 0, 0.45);
+    --shadow-sm: 0 8px 24px rgba(0, 0, 0, 0.35);
+  }
+
+  body {
+    background: var(--white);
+    color: var(--ink);
+  }
+
+  .site-header,
+  .site-footer {
+    background: #0a1016;
+    border-color: var(--line);
+  }
+
+  .card,
+  .card-premium,
+  .hero-card,
+  .review-slide {
+    background: var(--surface-2);
+    border: 1px solid var(--line);
+    color: var(--ink);
+    box-shadow: var(--shadow-sm);
+  }
+
+  .card h3,
+  .section-head h2,
+  h1, h2, h3, h4 {
+    color: var(--ink);
+  }
+
+  .muted {
+    color: var(--ink-soft);
+  }
+
+  .section-alt {
+    background: var(--surface);
+  }
+
+  .page-hero,
+  .hero {
+    background: linear-gradient(165deg, #0a1016 0%, #13202c 55%, #0d141b 100%);
+  }
+
+  .btn-outline {
+    border-color: rgba(142, 197, 239, 0.45);
+    color: var(--ink);
+    background: transparent;
+  }
+
+  .btn-outline:hover {
+    background: rgba(74, 163, 224, 0.14);
+  }
+
+  .btn-navy {
+    background: var(--blue-600);
+    color: #061018;
+  }
+
+  .review-stars {
+    color: var(--accent);
+  }
+
+  .review-stars .star {
+    opacity: 0.35;
+  }
+
+  .review-stars .star.on {
+    opacity: 1;
+  }
+
+  .review-quote p {
+    color: var(--ink);
+  }
+
+  .review-dots .dot {
+    background: rgba(142, 197, 239, 0.28);
+  }
+
+  .review-dots .dot.active {
+    background: var(--blue-600);
+  }
+
+  .notice {
+    background: rgba(74, 163, 224, 0.1);
+    border-color: var(--line);
+    color: var(--ink);
+  }
+
+  .media-frame,
+  .media-frame img,
+  .team-photo-sm img {
+    background: #0a1016;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .review-slide {
+    transition: none !important;
+    animation: none !important;
+  }
+}

@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { site } from "@/lib/site";
+import ReviewsCarousel from "@/components/ReviewsCarousel";
 
 export const metadata: Metadata = {
   title: "About",
@@ -153,6 +154,24 @@ export default function AboutPage() {
           <div className="section-footer-actions">
             <Link className="btn btn-navy" href="/appointment">
               Schedule a visit
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      <section className="section section-alt">
+        <div className="container" style={{ maxWidth: "46rem" }}>
+          <div className="section-head">
+            <p className="section-kicker">Google reviews</p>
+            <h2>What patients say</h2>
+            <p className="muted">
+              5-star Google reviews — auto-rotates (pauses on hover or keyboard focus).
+            </p>
+          </div>
+          <ReviewsCarousel />
+          <div className="section-footer-actions">
+            <Link className="btn btn-outline" href="/reviews">
+              More reviews
             </Link>
           </div>
         </div>

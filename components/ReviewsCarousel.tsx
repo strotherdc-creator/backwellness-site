@@ -21,6 +21,18 @@ function Stars({ rating }: { rating: number }) {
   );
 }
 
+function usePrefersReducedMotion() {
+  const [reduced, setReduced] = useState(false);
+  useEffect(() => {
+    const mq = window.matchMedia("(prefers-reduced-motion: reduce)");
+    const update = () => setReduced(mq.matches);
+    update();
+    mq.addEventListener("change", update);
+    return () => mq.removeEventListener("change", update);
+  }, []);
+  return reduced;
+}
+
 export default function ReviewsCarousel({
   reviews = googleFiveStarReviews,
 }: {
@@ -29,14 +41,15 @@ export default function ReviewsCarousel({
   const items = reviews.filter((r) => r.rating === 5);
   const [index, setIndex] = useState(0);
   const [paused, setPaused] = useState(false);
+  const reducedMotion = usePrefersReducedMotion();
 
   useEffect(() => {
-    if (items.length <= 1 || paused) return;
+    if (items.length <= 1 || paused || reducedMotion) return;
     const id = window.setInterval(() => {
       setIndex((i) => (i + 1) % items.length);
     }, INTERVAL_MS);
     return () => window.clearInterval(id);
-  }, [items.length, paused]);
+  }, [items.length, paused, reducedMotion]);
 
   if (items.length === 0) return null;
 
@@ -49,6 +62,8 @@ export default function ReviewsCarousel({
       onMouseLeave={() => setPaused(false)}
       onFocusCapture={() => setPaused(true)}
       onBlurCapture={() => setPaused(false)}
+      aria-roledescription="carousel"
+      aria-label="5-star Google reviews"
     >
       <div className="reviews-carousel-meta">
         <Stars rating={5} />
@@ -56,10 +71,15 @@ export default function ReviewsCarousel({
           Showing 5-star Google reviews · clinic averages{" "}
           <strong>{googleReviewsSummary.rating}</strong> from{" "}
           <strong>{googleReviewsSummary.count}</strong> Google reviews
+          {reducedMotion ? " · auto-rotate paused (reduced motion)" : ""}
         </p>
       </div>
 
-      <figure className="review-slide card" key={`${review.author}-${index}`}>
+      <figure
+        className="review-slide card"
+        key={`${review.author}-${index}`}
+        aria-live={reducedMotion ? "polite" : "off"}
+      >
         <Stars rating={review.rating} />
         <blockquote className="review-quote">
           <p>“{review.text}”</p>
