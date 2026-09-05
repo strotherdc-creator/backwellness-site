@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { site } from "@/lib/site";
+import ReviewsCarousel from "@/components/ReviewsCarousel";
 
 export default function HomePage() {
   return (
@@ -154,6 +155,25 @@ export default function HomePage() {
           <div className="section-footer-actions">
             <Link className="btn btn-navy" href="/services">
               View all services
+            </Link>
+          </div>
+        </div>
+      </section>
+
+
+      <section className="section section-alt">
+        <div className="container" style={{ maxWidth: "46rem" }}>
+          <div className="section-head">
+            <p className="section-kicker">Google reviews</p>
+            <h2>What patients are saying</h2>
+            <p className="muted">
+              5-star Google reviews only — the carousel rotates automatically.
+            </p>
+          </div>
+          <ReviewsCarousel />
+          <div className="section-footer-actions">
+            <Link className="btn btn-outline" href="/reviews">
+              More reviews
             </Link>
           </div>
         </div>

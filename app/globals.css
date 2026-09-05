@@ -766,3 +766,92 @@ ul {
   .hero-card { padding: 0.95rem; }
   .card { padding: 1.25rem; }
 }
+
+
+/* Reviews carousel */
+.reviews-carousel {
+  display: grid;
+  gap: 1.25rem;
+}
+
+.reviews-carousel-meta {
+  display: grid;
+  gap: 0.35rem;
+}
+
+.review-stars {
+  display: inline-flex;
+  gap: 0.15rem;
+  color: var(--accent);
+  font-size: 1.15rem;
+  letter-spacing: 0.02em;
+  line-height: 1;
+}
+
+.review-stars .star {
+  opacity: 0.28;
+}
+
+.review-stars .star.on {
+  opacity: 1;
+}
+
+.review-slide {
+  min-height: 14rem;
+  display: grid;
+  gap: 1rem;
+  align-content: start;
+}
+
+.review-quote {
+  margin: 0;
+}
+
+.review-quote p {
+  margin: 0;
+  font-size: clamp(1.05rem, 2.2vw, 1.2rem);
+  line-height: 1.55;
+  color: var(--ink);
+}
+
+.review-byline {
+  display: grid;
+  gap: 0.15rem;
+  font-size: 0.95rem;
+}
+
+.review-controls {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+}
+
+.review-dots {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+  justify-content: center;
+}
+
+.review-dots .dot {
+  width: 0.65rem;
+  height: 0.65rem;
+  border-radius: 999px;
+  border: 0;
+  padding: 0;
+  background: rgba(12, 82, 132, 0.22);
+  cursor: pointer;
+}
+
+.review-dots .dot.active {
+  background: var(--blue-600);
+  transform: scale(1.15);
+}
+
+@media (max-width: 560px) {
+  .review-controls {
+    justify-content: center;
+  }
+}
