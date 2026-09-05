@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { site } from "@/lib/site";
 
@@ -5,8 +6,9 @@ export default function HomePage() {
   return (
     <>
       <section className="hero">
+        <div className="hero-pattern" aria-hidden="true" />
         <div className="container hero-grid">
-          <div>
+          <div className="hero-copy">
             <span className="eyebrow">Sturgeon Bay, Wisconsin</span>
             <h1>{site.tagline}</h1>
             <p className="hero-lead">
@@ -14,7 +16,7 @@ export default function HomePage() {
               reach your healthcare goals with chiropractic care focused on
               spinal alignment and nervous system function.
             </p>
-            <div className="btn-row" style={{ marginTop: "1.5rem" }}>
+            <div className="btn-row hero-actions">
               <a className="btn btn-accent" href={`tel:${site.phoneTel}`}>
                 Call {site.phone}
               </a>
@@ -24,6 +26,16 @@ export default function HomePage() {
             </div>
           </div>
           <aside className="hero-card">
+            <div className="hero-card-media">
+              <Image
+                src="/images/team-meet.jpg"
+                alt={`${site.doctor.name}, chiropractor in Sturgeon Bay`}
+                width={640}
+                height={800}
+                className="media-img"
+                priority
+              />
+            </div>
             <h2>How we can help</h2>
             <ul>
               {site.conditions.map((item) => (
@@ -37,7 +49,8 @@ export default function HomePage() {
       <section className="section">
         <div className="container">
           <div className="section-head">
-            <h2>Welcome to chiropractic care in Sturgeon Bay</h2>
+            <p className="section-kicker">Welcome</p>
+            <h2>Chiropractic care in Sturgeon Bay</h2>
             <p className="muted">
               Chiropractic care is the practice of using spinal alignment to
               alleviate a wide variety of physical ailments, including muscle
@@ -46,8 +59,8 @@ export default function HomePage() {
               proper shape, providing a non-invasive solution for pain relief.
             </p>
           </div>
-          <div className="grid-2">
-            <article className="card">
+          <div className="grid-2 feature-grid">
+            <article className="card card-lift">
               <h3>How can chiropractic care help you?</h3>
               <p>
                 Many people dismiss chiropractic as being something only for
@@ -62,7 +75,7 @@ export default function HomePage() {
                 for you.
               </p>
             </article>
-            <article className="card">
+            <article className="card card-lift">
               <h3>The nervous system connection</h3>
               <p>
                 Chiropractic is based on the scientific fact that your nervous
@@ -85,7 +98,41 @@ export default function HomePage() {
 
       <section className="section section-alt">
         <div className="container">
+          <div className="split-media">
+            <div className="media-frame">
+              <Image
+                src="/images/highlighted-spine.webp"
+                alt="Spinal assessment and alignment-focused care"
+                width={720}
+                height={540}
+                className="media-img"
+              />
+            </div>
+            <div>
+              <p className="section-kicker">Focused care</p>
+              <h2>Support for your spine and lifestyle</h2>
+              <p className="muted">
+                From gentle adjustments to PiezoWave, spinal decompression, and
+                cold laser &amp; LED therapy, we offer options that can be part
+                of an individualized plan after examination.
+              </p>
+              <div className="btn-row" style={{ marginTop: "1.25rem" }}>
+                <Link className="btn btn-navy" href="/about">
+                  Meet Dr. Luke &amp; team
+                </Link>
+                <Link className="btn btn-outline" href="/services">
+                  Explore services
+                </Link>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="section">
+        <div className="container">
           <div className="section-head">
+            <p className="section-kicker">Services</p>
             <h2>Services to support your lifestyle</h2>
             <p className="muted">
               You do not have to live in pain. Explore supportive options
@@ -94,15 +141,17 @@ export default function HomePage() {
           </div>
           <div className="grid-3">
             {site.services.slice(0, 3).map((service, index) => (
-              <article className="card" key={service.title}>
-                <div className="card-icon">{index + 1}</div>
+              <article className="card card-premium" key={service.title}>
+                <div className="card-icon">{String(index + 1).padStart(2, "0")}</div>
                 <h3>{service.title}</h3>
                 <p className="muted">{service.description}</p>
-                <Link href={service.href}>Learn more →</Link>
+                <Link className="card-link" href={service.href}>
+                  Learn more →
+                </Link>
               </article>
             ))}
           </div>
-          <div style={{ marginTop: "1.75rem" }}>
+          <div className="section-footer-actions">
             <Link className="btn btn-navy" href="/services">
               View all services
             </Link>
@@ -110,7 +159,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="section">
+      <section className="section section-tight">
         <div className="container">
           <div className="cta-band">
             <div>

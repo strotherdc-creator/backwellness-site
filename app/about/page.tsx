@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { site } from "@/lib/site";
 
@@ -7,23 +8,55 @@ export const metadata: Metadata = {
   description: `Meet ${site.doctor.name}, ${site.doctor.credentials}, and the team at ${site.name} in Sturgeon Bay, WI.`,
 };
 
+const staffPhotos: Record<string, { src: string; alt: string }> = {
+  Ashley: {
+    src: "/images/ashley-circle.webp",
+    alt: "Ashley, Front Desk Receptionist & Chiropractic Technician",
+  },
+  Alex: {
+    src: "/images/alex-circle.webp",
+    alt: "Alex, Front Desk Receptionist / Radiologic Technician / PiezoWave",
+  },
+};
+
 export default function AboutPage() {
   return (
     <>
-      <section className="page-hero">
-        <div className="container">
-          <span className="eyebrow">Meet the team</span>
-          <h1>About {site.shortName}</h1>
-          <p className="muted prose">
-            Caring chiropractic wellness in Sturgeon Bay — helping patients get
-            their lifestyle back.
-          </p>
+      <section className="page-hero page-hero-media">
+        <div className="container page-hero-grid">
+          <div>
+            <span className="eyebrow">Meet the team</span>
+            <h1>About {site.shortName}</h1>
+            <p className="muted prose">
+              Caring chiropractic wellness in Sturgeon Bay — helping patients get
+              their lifestyle back.
+            </p>
+          </div>
+          <div className="media-frame media-frame-hero">
+            <Image
+              src="/images/team.jpg"
+              alt={`${site.doctor.name} and the clinic team`}
+              width={720}
+              height={540}
+              className="media-img"
+              priority
+            />
+          </div>
         </div>
       </section>
 
       <section className="section">
-        <div className="container grid-2">
-          <article className="card team-card">
+        <div className="container grid-2 feature-grid">
+          <article className="card team-card card-lift">
+            <div className="team-photo">
+              <Image
+                src="/images/team-meet.jpg"
+                alt={site.doctor.name}
+                width={480}
+                height={600}
+                className="media-img"
+              />
+            </div>
             <p className="role">Chiropractor</p>
             <h2>
               {site.doctor.name}, {site.doctor.credentials}
@@ -52,7 +85,16 @@ export default function AboutPage() {
             </ul>
           </article>
 
-          <article className="card">
+          <article className="card card-lift">
+            <div className="team-photo team-photo-sm">
+              <Image
+                src="/images/luke-circle.jpg"
+                alt={site.doctor.name}
+                width={280}
+                height={280}
+                className="media-img media-img-round"
+              />
+            </div>
             <h2>Memberships & associations</h2>
             <ul className="info-list">
               {site.doctor.memberships.map((item) => (
@@ -79,22 +121,36 @@ export default function AboutPage() {
       <section className="section section-alt">
         <div className="container">
           <div className="section-head">
-            <h2>Our staff</h2>
+            <p className="section-kicker">Our staff</p>
+            <h2>Friendly faces ready to help</h2>
             <p className="muted">
-              Friendly faces ready to help with scheduling, care support, and
-              your visit.
+              Scheduling, care support, and a welcoming visit experience.
             </p>
           </div>
           <div className="grid-2">
-            {site.staff.map((person) => (
-              <article className="card team-card" key={person.name}>
-                <p className="role">{person.role}</p>
-                <h3>{person.name}</h3>
-                <p>{person.summary}</p>
-              </article>
-            ))}
+            {site.staff.map((person) => {
+              const photo = staffPhotos[person.name];
+              return (
+                <article className="card team-card card-lift" key={person.name}>
+                  {photo ? (
+                    <div className="team-photo team-photo-sm">
+                      <Image
+                        src={photo.src}
+                        alt={photo.alt}
+                        width={220}
+                        height={220}
+                        className="media-img media-img-round"
+                      />
+                    </div>
+                  ) : null}
+                  <p className="role">{person.role}</p>
+                  <h3>{person.name}</h3>
+                  <p>{person.summary}</p>
+                </article>
+              );
+            })}
           </div>
-          <div style={{ marginTop: "2rem" }}>
+          <div className="section-footer-actions">
             <Link className="btn btn-navy" href="/appointment">
               Schedule a visit
             </Link>
