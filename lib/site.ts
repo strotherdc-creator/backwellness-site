@@ -123,6 +123,7 @@ export const site = {
     { href: "/", label: "Home" },
     { href: "/about", label: "About" },
     { href: "/services", label: "Services" },
+    { href: "/service-area", label: "Service Area" },
     { href: "/patients", label: "Patients" },
     { href: "/reviews", label: "Reviews" },
     { href: "/appointment", label: "Appointment" },
