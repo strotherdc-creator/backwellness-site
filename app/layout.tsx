@@ -11,7 +11,7 @@ export const metadata: Metadata = {
     template: `%s | ${site.shortName}`,
   },
   description:
-    "Door County chiropractor in Sturgeon Bay, WI — Staudenmaier Chiropractic Wellness Center offers chiropractic care for muscle strain, neck pain, chronic back pain, migraines, and more. Serving Door County communities within about a 40-minute drive. Get your lifestyle back.",
+    "Move Better. Live Better. Hometown chiropractic care in Sturgeon Bay and Door County with Dr. Luke Staudenmaier — personalized, gentle care since 1994. Serving Door County communities within about a 40-minute drive.",
   metadataBase: new URL(`https://${site.domain}`),
 };
 

@@ -14,8 +14,8 @@ export default function Footer() {
           <Logo variant="light" />
           <p className="footer-tagline">{site.tagline}</p>
           <p>
-            Caring chiropractic wellness in Sturgeon Bay, Wisconsin — helping
-            you get your lifestyle back.
+            Hometown chiropractic care in Sturgeon Bay and Door County —
+            helping you move better and live better.
           </p>
         </div>
 

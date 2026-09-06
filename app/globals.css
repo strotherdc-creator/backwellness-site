@@ -306,7 +306,7 @@ ul {
 
 .hero h1 {
   font-size: clamp(2.35rem, 5.4vw, 3.75rem);
-  max-width: 13ch;
+  max-width: 16ch;
   margin-bottom: 1.1rem;
   color: var(--white);
 }
@@ -765,6 +765,39 @@ ul {
   .btn-row { gap: 0.65rem; }
   .hero-card { padding: 0.95rem; }
   .card { padding: 1.25rem; }
+}
+
+
+/* Trust strip under homepage hero */
+.trust-strip {
+  background: var(--surface-2);
+  border-bottom: 1px solid var(--line);
+  padding: 0.95rem 0;
+}
+
+.trust-strip-inner {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 0.55rem 0.85rem;
+  text-align: center;
+  font-size: 0.92rem;
+  font-weight: 700;
+  color: var(--blue-900);
+  letter-spacing: 0.01em;
+}
+
+.trust-strip-sep {
+  color: rgba(12, 82, 132, 0.35);
+  font-weight: 400;
+}
+
+@media (max-width: 560px) {
+  .trust-strip-inner {
+    gap: 0.35rem 0.55rem;
+    font-size: 0.84rem;
+  }
 }
 
 
