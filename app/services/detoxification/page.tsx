@@ -72,18 +72,18 @@ export default function DetoxificationPage() {
           <div className="notice" style={{ marginTop: "1.5rem" }}>
             <p style={{ margin: 0 }}>
               Interested in discussing detoxification as part of wellness care?
-              Call our office to talk with the team. Recommendations are
+              Request an appointment to talk with the team. Recommendations are
               individualized and educational — not medical guarantees.
             </p>
           </div>
 
           <div className="btn-row" style={{ marginTop: "1.5rem" }}>
-            <a className="btn btn-gold" href={`tel:${site.phoneTel}`}>
+            <Link className="btn btn-gold" href="/appointment">
+              Request an Appointment
+            </Link>
+            <a className="btn btn-outline" href={`tel:${site.phoneTel}`}>
               Call {site.phone}
             </a>
-            <Link className="btn btn-outline" href="/appointment">
-              Appointment info
-            </Link>
             <Link className="btn btn-outline" href="/services">
               All services
             </Link>

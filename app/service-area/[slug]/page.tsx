@@ -97,15 +97,15 @@ export default async function ServiceAreaSlugPage({ params }: PageProps) {
             <p>{area.blurbHooks.careNote}</p>
             <p className="muted">
               Care plans are individualized after examination and consultation.
-              No service is a guaranteed cure — your doctor will help design a
-              program that is right for you.
+              We listen, evaluate, and explain — then you decide. No service is
+              a guaranteed cure.
             </p>
             <div className="btn-row" style={{ marginTop: "1.25rem" }}>
-              <Link className="btn btn-gold" href="/services">
-                View our services
+              <Link className="btn btn-gold" href="/appointment">
+                Request an Appointment
               </Link>
-              <Link className="btn btn-outline" href="/appointment">
-                Appointment info
+              <Link className="btn btn-outline" href="/services">
+                View our services
               </Link>
             </div>
           </article>

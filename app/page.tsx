@@ -169,10 +169,10 @@ export default function HomePage() {
           <div className="split-media">
             <div className="media-frame">
               <Image
-                src="/images/highlighted-spine.webp"
-                alt="Spinal assessment highlighting vertebral alignment during chiropractic care"
-                width={720}
-                height={540}
+                src="/images/chiropractic-adjustment.jpg"
+                alt="Dr. Luke performing a chiropractic adjustment"
+                width={1280}
+                height={1700}
                 className="media-img"
               />
             </div>

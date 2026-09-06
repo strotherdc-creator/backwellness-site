@@ -42,10 +42,10 @@ export default function LaserLedPage() {
             <span className="eyebrow">Light therapy</span>
             <h1>Cold Laser and LED Therapy in Sturgeon Bay</h1>
             <p className="muted prose">
-              Cold laser and LED light therapy uses a light-emitting device that
-              can be applied to many different parts of the body. Care is
-              non-thermal and noninvasive. Some approaches may combine light
-              with electric stimulation when appropriate.
+              Cold laser and LED light therapy is a noninvasive option that may
+              support soft-tissue comfort as part of a care plan. A handheld
+              device delivers light to the area being treated. Some approaches
+              may combine light with electric stimulation when appropriate.
             </p>
           </div>
           <div className="media-frame media-frame-hero">
@@ -75,9 +75,8 @@ export default function LaserLedPage() {
             When tissues are damaged, cells can begin to die and scar tissue
             formation may begin — consequences that can slow or limit healing.
             Cold laser units are engineered to produce wavelengths of light
-            intended to stimulate damaged cells, help break up formed scar
-            tissue, reduce pain and swelling, and support the healing process —
-            as described for this modality on our source clinic materials.
+            intended to support cellular activity, comfort, and soft-tissue
+            recovery as part of an individualized plan. Results vary.
           </p>
 
           <h2>Who it&apos;s for</h2>
@@ -133,21 +132,18 @@ export default function LaserLedPage() {
           </div>
 
           <p style={{ marginTop: "2rem" }}>
-            Curious whether cold laser or LED therapy may help with your
-            concerns? Call our Sturgeon Bay team.
+            Curious whether cold laser or LED therapy may help? Request an
+            appointment or call our Sturgeon Bay team.
           </p>
           <div className="btn-row">
-            <a className="btn btn-gold" href={`tel:${site.phoneTel}`}>
+            <Link className="btn btn-gold" href="/appointment">
+              Request an Appointment
+            </Link>
+            <a className="btn btn-outline" href={`tel:${site.phoneTel}`}>
               Call {site.phone}
             </a>
-            <Link className="btn btn-outline" href="/appointment">
-              Appointment info
-            </Link>
             <Link className="btn btn-outline" href="/services">
               All services
-            </Link>
-            <Link className="btn btn-outline" href="/contact">
-              Contact & hours
             </Link>
           </div>
         </div>

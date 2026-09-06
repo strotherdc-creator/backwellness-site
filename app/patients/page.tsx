@@ -4,7 +4,7 @@ import { site } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Patients",
-  description: `New patient information and what to expect at ${site.name} in Sturgeon Bay, WI.`,
+  description: `New patient information and what to expect at ${site.name} in Sturgeon Bay, WI — personalized chiropractic care with Dr. Luke.`,
 };
 
 export default function PatientsPage() {
@@ -28,17 +28,19 @@ export default function PatientsPage() {
             <h2>What to expect</h2>
             <ul className="info-list">
               <li>
-                Our team will discuss your needs and help design a program that
-                is right for you.
+                We listen first — so care fits your life, not a one-size plan.
               </li>
               <li>
-                Care focuses on spinal alignment and supporting healthy nervous
-                system function.
+                We evaluate with an appropriate exam. On-site X-ray is available
+                when it is clinically indicated.
               </li>
               <li>
-                Depending on your visit, examinations, X-rays, or supportive
-                therapies such as PiezoWave may be part of care when
-                appropriate.
+                We explain findings in plain language and recommend options. You
+                decide what feels right.
+              </li>
+              <li>
+                Supportive options such as PiezoWave may be part of care when
+                appropriate — as tools, not the whole plan.
               </li>
               <li>
                 Ashley assists with scheduling, billing, and insurance questions
@@ -50,12 +52,12 @@ export default function PatientsPage() {
           <article className="card">
             <h2>New patients</h2>
             <p>
-              New patients are welcome. Please call{" "}
+              New patients are welcome. Request an appointment by phone at{" "}
               <a href={`tel:${site.phoneTel}`}>
                 <strong>{site.phone}</strong>
-              </a>{" "}
-              to schedule. Our staff can help you understand what to bring and
-              how to prepare for your first visit.
+              </a>
+              . Our staff can help you understand what to bring and how to
+              prepare for your first visit.
             </p>
             <p>
               We do not collect protected health information through this
@@ -63,12 +65,12 @@ export default function PatientsPage() {
               person at the clinic.
             </p>
             <div className="btn-row" style={{ marginTop: "1rem" }}>
-              <a className="btn btn-gold" href={`tel:${site.phoneTel}`}>
-                Call to schedule
-              </a>
-              <Link className="btn btn-outline" href="/contact">
-                Office hours & location
+              <Link className="btn btn-gold" href="/appointment">
+                Request an Appointment
               </Link>
+              <a className="btn btn-outline" href={`tel:${site.phoneTel}`}>
+                Call {site.phone}
+              </a>
             </div>
           </article>
         </div>
@@ -76,18 +78,16 @@ export default function PatientsPage() {
 
       <section className="section section-alt">
         <div className="container prose">
-          <h2>Education focus</h2>
+          <h2>How we approach care</h2>
           <p>
-            Chiropractic is based on the understanding that your nervous system
-            controls the function of every cell, tissue, organ, and system of
-            your body. The 24 moving bones of the spine protect the spinal cord;
-            when those bones lose normal position or motion, nervous system
-            function can be affected.
+            Pain, stiffness, or limited mobility should not decide what you can
+            do at work, at home, or around Door County. {site.doctor.displayName}{" "}
+            focuses on personalized, gentle chiropractic care — listening,
+            evaluating, and explaining so you leave with clear next steps.
           </p>
           <p>
-            The chiropractic approach to better health is to detect, reduce, and
-            help prevent nervous system dysfunction — supporting your goal to
-            get your lifestyle back.
+            When a problem needs more than an adjustment, we may discuss
+            additional options. You stay in charge of the decision.
           </p>
         </div>
       </section>

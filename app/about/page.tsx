@@ -29,7 +29,9 @@ export default function AboutPage() {
           <h1>About {site.shortName}</h1>
           <p className="muted prose">
             Hometown chiropractic care in Sturgeon Bay — helping Door County
-            patients move better and stay active.
+            patients move better and live better with{" "}
+            {site.doctor.displayName}, an experienced local guide since{" "}
+            {site.doctor.licensedSince}.
           </p>
         </div>
       </section>
@@ -130,10 +132,13 @@ export default function AboutPage() {
               );
             })}
           </div>
-          <div className="section-footer-actions">
+          <div className="section-footer-actions btn-row">
             <Link className="btn btn-navy" href="/appointment">
-              Schedule a visit
+              Request an Appointment
             </Link>
+            <a className="btn btn-outline" href={`tel:${site.phoneTel}`}>
+              Call {site.phone}
+            </a>
           </div>
         </div>
       </section>
