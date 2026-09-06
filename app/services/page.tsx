@@ -5,7 +5,7 @@ import { site } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Services",
-  description: `Chiropractic care and wellness services at ${site.name}, including chiropractic, PiezoWave, spinal decompression, cold laser and LED therapy, postural screenings, nutrition, wellness care, chiropractic for kids, and detoxification.`,
+  description: `Chiropractic care and supportive options at ${site.name} in Sturgeon Bay — personalized care to help Door County patients move better and live better.`,
 };
 
 export default function ServicesPage() {
@@ -17,16 +17,17 @@ export default function ServicesPage() {
             <span className="eyebrow">Care options</span>
             <h1>Services</h1>
             <p className="muted prose">
-              You do not have to live in pain. We are here to help you get your
-              life back with chiropractic care and supportive wellness services.
+              Chiropractic care comes first. When a problem needs more,{" "}
+              {site.doctor.displayName} can add supportive options that may help
+              — so you can move better in the activities that matter.
             </p>
           </div>
           <div className="media-frame media-frame-hero">
             <Image
-              src="/images/highlighted-spine.webp"
-              alt="Spinal care and wellness services"
-              width={720}
-              height={540}
+              src="/images/chiropractic-care.jpg"
+              alt="Dr. Luke performing chiropractic care for a patient in Sturgeon Bay"
+              width={1280}
+              height={1700}
               className="media-img"
               priority
             />
@@ -38,10 +39,10 @@ export default function ServicesPage() {
         <div className="container">
           <div className="section-head">
             <p className="section-kicker">Conditions</p>
-            <h2>Conditions people often seek care for</h2>
+            <h2>When pain or stiffness gets in the way</h2>
             <p className="muted">
-              Chiropractic treatment can be used to address a wide variety of
-              physical issues.
+              People often seek care for concerns like these — and for the work,
+              hobbies, and daily life they limit.
             </p>
           </div>
           <div className="pill-list" style={{ marginBottom: "2.75rem" }}>
@@ -83,8 +84,8 @@ export default function ServicesPage() {
               <p className="section-kicker">Personalized plans</p>
               <h2>Care plans are individualized</h2>
               <p className="muted">
-                Call our office to discuss whether a service is appropriate for
-                your situation after examination and consultation.
+                We examine carefully, explain what we find, and recommend
+                options. You stay in charge of the decision.
               </p>
               <div className="notice" style={{ marginTop: "1.25rem" }}>
                 <p style={{ margin: 0 }}>
@@ -93,12 +94,12 @@ export default function ServicesPage() {
                 </p>
               </div>
               <div className="btn-row" style={{ marginTop: "1.5rem" }}>
-                <a className="btn btn-gold" href={`tel:${site.phoneTel}`}>
+                <Link className="btn btn-gold" href="/appointment">
+                  Request an Appointment
+                </Link>
+                <a className="btn btn-outline" href={`tel:${site.phoneTel}`}>
                   Call {site.phone}
                 </a>
-                <Link className="btn btn-outline" href="/appointment">
-                  Appointment info
-                </Link>
               </div>
             </div>
           </div>

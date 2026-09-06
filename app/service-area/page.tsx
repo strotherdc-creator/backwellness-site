@@ -108,14 +108,14 @@ export default function ServiceAreaIndexPage() {
               </a>
             </p>
             <div className="btn-row">
-              <a className="btn btn-gold" href={`tel:${site.phoneTel}`}>
+              <Link className="btn btn-gold" href="/appointment">
+                Request an Appointment
+              </Link>
+              <a className="btn btn-outline" href={`tel:${site.phoneTel}`}>
                 Call {site.phone}
               </a>
               <Link className="btn btn-outline" href="/contact">
                 Contact & hours
-              </Link>
-              <Link className="btn btn-outline" href="/appointment">
-                Appointment info
               </Link>
             </div>
           </article>

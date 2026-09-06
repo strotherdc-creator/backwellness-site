@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { formatAddress, mapsUrl, site } from "@/lib/site";
 
 export const metadata: Metadata = {
@@ -14,8 +15,9 @@ export default function ContactPage() {
           <span className="eyebrow">Get in touch</span>
           <h1>Contact</h1>
           <p className="muted prose">
-            Visit us in Sturgeon Bay or call the office. We do not collect
-            patient forms or PHI through this website.
+            Visit us in Sturgeon Bay or call the office. Ready to move better?
+            Request an appointment by phone. We do not collect patient forms or
+            PHI through this website.
           </p>
         </div>
       </section>
@@ -40,8 +42,11 @@ export default function ContactPage() {
               Fax: {site.fax}
             </p>
             <div className="btn-row">
-              <a className="btn btn-gold" href={`tel:${site.phoneTel}`}>
-                Call now
+              <Link className="btn btn-gold" href="/appointment">
+                Request an Appointment
+              </Link>
+              <a className="btn btn-outline" href={`tel:${site.phoneTel}`}>
+                Call {site.phone}
               </a>
               <a
                 className="btn btn-outline"

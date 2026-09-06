@@ -4,7 +4,7 @@ import { site } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Appointment",
-  description: `Call ${site.phone} to book an appointment at ${site.name} in Sturgeon Bay, WI.`,
+  description: `Request an appointment with ${site.doctor.displayName} at ${site.name}. Call ${site.phone} to schedule in Sturgeon Bay, WI.`,
 };
 
 export default function AppointmentPage() {
@@ -13,10 +13,10 @@ export default function AppointmentPage() {
       <section className="page-hero">
         <div className="container">
           <span className="eyebrow">Schedule</span>
-          <h1>Book an appointment</h1>
+          <h1>Request an Appointment</h1>
           <p className="muted prose">
-            Appointments are scheduled by phone. There is no online booking form
-            on this site.
+            Ready to move better? Appointments are scheduled by phone. There is
+            no online booking form on this site.
           </p>
         </div>
       </section>
@@ -27,19 +27,21 @@ export default function AppointmentPage() {
             <h2>Call to book</h2>
             <p>
               Reach our front desk to find a time that works for you. Ashley and
-              Alex can help with scheduling questions.
+              Alex can help with scheduling questions for new and returning
+              patients.
             </p>
-            <a
-              className="btn btn-gold"
-              href={`tel:${site.phoneTel}`}
-              style={{ marginTop: "0.5rem" }}
-            >
-              Call {site.phone}
-            </a>
+            <div className="btn-row" style={{ marginTop: "0.5rem" }}>
+              <a className="btn btn-gold" href={`tel:${site.phoneTel}`}>
+                Call {site.phone}
+              </a>
+              <Link className="btn btn-outline" href="/contact">
+                Contact & hours
+              </Link>
+            </div>
             <p className="muted" style={{ marginTop: "1.25rem", marginBottom: 0 }}>
-              Prefer email-style contact details? See our{" "}
-              <Link href="/contact">contact page</Link> for address, fax, and
-              hours.
+              Prefer details first? See our{" "}
+              <Link href="/patients">patients page</Link> for what to expect on
+              a first visit.
             </p>
           </article>
 

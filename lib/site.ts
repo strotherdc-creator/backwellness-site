@@ -68,55 +68,55 @@ export const site = {
       title: "Chiropractic Care",
       href: "/services/chiropractic",
       description:
-        "Spinal alignment and nervous system-focused care for muscle strain, neck and back pain, headaches, and more.",
+        "Personalized adjustments to help with muscle strain, neck and back pain, headaches, and everyday mobility.",
     },
     {
       title: "PiezoWave (MyACT)",
       href: "/services/piezowave",
       description:
-        "Myofascial Acoustic Compression Therapy using focused sound waves for muscles, tendons, and joints.",
+        "An option for stubborn muscle, tendon, and joint problems when a simple adjustment is not the whole answer.",
     },
     {
       title: "Spinal Decompression",
       href: "/services/spinal-decompression",
       description:
-        "Gentle, non-surgical decompression that may help with disc-related neck and low back concerns.",
+        "Gentle, non-surgical care that may help with certain disc-related neck and low back concerns.",
     },
     {
       title: "Cold Laser & LED Therapy",
       href: "/services/laser-led",
       description:
-        "Non-invasive light therapy used for a wide range of pain and soft-tissue concerns.",
+        "Light-based therapy that can support soft-tissue comfort as part of a care plan.",
     },
     {
       title: "Postural Screenings",
       href: "/services/postural-screenings",
       description:
-        "Screenings that help identify postural patterns that may contribute to discomfort.",
+        "A practical look at how you stand and sit — and whether posture may be adding to discomfort.",
     },
     {
       title: "Nutrition",
       href: "/services/nutrition",
       description:
-        "Guidance to support overall wellness as part of a personalized care plan.",
+        "Practical nutrition guidance to support how you feel day to day as part of your care plan.",
     },
     {
       title: "Wellness Care",
       href: "/services/wellness-care",
       description:
-        "Preventive spinal care focused on mobility, nervous system function, and long-term wellness.",
+        "Ongoing chiropractic visits to support mobility, comfort, and staying active over time.",
     },
     {
       title: "Chiropractic Care for Kids",
       href: "/services/chiropractic-care-kids",
       description:
-        "Gentle, noninvasive chiropractic care to support growing children and healthy development.",
+        "Gentle, noninvasive chiropractic care sized for growing kids and active families.",
     },
     {
       title: "Detoxification",
       href: "/services/detoxification",
       description:
-        "Supportive detoxification approaches discussed as part of wellness care when appropriate.",
+        "Educational wellness conversations about supportive habits — discussed only when they fit you.",
     },
   ],
   nav: [

@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { site } from "@/lib/site";
 import { googleReviewsSummary } from "@/lib/reviews";
 import ReviewsCarousel from "@/components/ReviewsCarousel";
@@ -20,7 +21,8 @@ export default function ReviewsPage() {
           <span className="eyebrow">Patient feedback</span>
           <h1>Reviews</h1>
           <p className="muted prose">
-            Real 5-star Google reviews from patients of {site.shortName}.
+            Real 5-star Google reviews from Door County patients of{" "}
+            {site.shortName} — hometown care with {site.doctor.displayName}.
           </p>
         </div>
       </section>
@@ -30,7 +32,10 @@ export default function ReviewsPage() {
           <ReviewsCarousel />
 
           <div className="btn-row" style={{ marginTop: "1.75rem" }}>
-            <a className="btn btn-navy" href={`tel:${site.phoneTel}`}>
+            <Link className="btn btn-navy" href="/appointment">
+              Request an Appointment
+            </Link>
+            <a className="btn btn-outline" href={`tel:${site.phoneTel}`}>
               Call {site.phone}
             </a>
             <a

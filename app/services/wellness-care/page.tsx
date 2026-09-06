@@ -5,7 +5,7 @@ import { site } from "@/lib/site";
 export const metadata: Metadata = {
   title: "Wellness Care",
   description:
-    "Chiropractic wellness care in Sturgeon Bay, WI at Staudenmaier Chiropractic Wellness Center, SC — preventive spinal care to support mobility and nervous system function.",
+    "Ongoing chiropractic wellness care in Sturgeon Bay, WI — supportive visits to help you stay mobile, comfortable, and active with Dr. Luke.",
 };
 
 export default function WellnessCarePage() {
@@ -17,79 +17,61 @@ export default function WellnessCarePage() {
           <h1>Wellness Care in Sturgeon Bay</h1>
           <p className="muted prose">
             Not feeling sick is not the same as feeling as well as you could.
-            Many people wait until pain or illness shows up before seeking
-            chiropractic care — and many assume a slow decline with age is
-            inevitable. Wellness care focuses on spinal health and mobility so
-            you can support how your body functions day to day.
+            Many people wait until pain shows up before seeking care. Wellness
+            visits focus on keeping you moving — so desk work, hobbies, and
+            Door County life stay within reach.
           </p>
         </div>
       </section>
 
       <section className="section">
         <div className="container prose">
-          <h2>How lifestyle shapes wellness</h2>
+          <h2>How daily life adds up</h2>
           <p>
-            Everyday choices — diet, posture, desk work, and even how we hold
-            emotional tension — can create quiet stress on the spine and nervous
-            system long before obvious symptoms appear. Hours at a desk, how you
-            hold your head, or chronically tensed shoulders can affect the neck
-            and back and, over time, how the body feels overall.
+            Everyday choices — posture, desk work, lifting, and stress — can
+            create quiet strain on the spine and joints long before obvious
+            symptoms appear. Hours at a computer or chronically tensed shoulders
+            can affect how your neck and back feel over time.
           </p>
           <p>
-            Your spinal column houses the nerves that carry messages throughout
-            the body. When vertebrae lose their normal position or motion, and
-            when chronic muscle tension persists, that messaging can be
-            affected. Even when you do not feel &ldquo;sick,&rdquo; a little
-            extra attention can help keep daily habits from turning into larger
-            problems.
+            A little attention early can help keep small habits from turning
+            into larger limits on what you can do.
           </p>
 
-          <h2>Why wellness care matters</h2>
+          <h2>Why wellness visits matter</h2>
           <p>
-            Health can be thought of as the body functioning properly — not only
-            the absence of feeling ill. If nervous system communication is
-            limited, systems may not work as well as they could. Through regular
-            wellness care aimed at spinal health and mobility, people often
-            report more energy and fewer illnesses. Those experiences are
-            individual and not a guarantee, but they are a common reason people
-            stay on a maintenance schedule.
+            Wellness care is about supporting how you move and feel day to day —
+            not waiting until you feel broken to start. Regular, gentle
+            chiropractic visits can help you maintain mobility and catch
+            concerns earlier, as part of a plan that fits your goals.
           </p>
           <p>
-            When nervous system function is supported, related areas people
-            notice in daily life can include digestion, blood flow, lung
-            capacity, heartbeat awareness, skin tone, and overall mobility —
-            reflecting how interconnected the spine and body are.
+            Individual experiences vary. There are no guarantees. Your doctor
+            will help decide whether a maintenance schedule makes sense after
+            evaluation.
           </p>
 
           <h2>Chiropractic as part of a wellness plan</h2>
           <p>
-            Regular, gentle adjustments are a preventive approach: they help
-            address the cumulative effects of daily life before small issues
-            become harder to manage. A thorough evaluation of your history and
-            current physical state can help catch concerns early and guide a
-            plan suited to you.
-          </p>
-          <p>
-            At {site.name}, wellness care is about supporting peak function so
-            you can keep doing what matters — not waiting until you feel broken
-            to start.
+            At {site.name}, wellness care starts with listening and a clear
+            evaluation. From there, {site.doctor.displayName} explains options
+            in plain language — and you decide what feels right for your life.
           </p>
 
           <div className="notice" style={{ marginTop: "1.5rem" }}>
             <p style={{ margin: 0 }}>
-              Ready to talk about a wellness care plan? Call our Sturgeon Bay
-              office to schedule a consultation with {site.doctor.displayName}{" "}
-              and the team.
+              Ready to talk about a wellness care plan? Request an appointment
+              with {site.doctor.displayName} and the Sturgeon Bay team.
             </p>
           </div>
 
           <div className="btn-row" style={{ marginTop: "1.5rem" }}>
-            <a className="btn btn-gold" href={`tel:${site.phoneTel}`}>
+            <Link className="btn btn-gold" href="/appointment">
+              Request an Appointment
+            </Link>
+            <a className="btn btn-outline" href={`tel:${site.phoneTel}`}>
               Call {site.phone}
             </a>
-            <Link className="btn btn-outline" href="/appointment">
-              Appointment info
-            </Link>
             <Link className="btn btn-outline" href="/services">
               All services
             </Link>

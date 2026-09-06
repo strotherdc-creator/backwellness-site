@@ -41,11 +41,10 @@ export default function SpinalDecompressionPage() {
             <span className="eyebrow">Non-surgical option</span>
             <h1>Spinal Decompression in Sturgeon Bay</h1>
             <p className="muted prose">
-              Gentle, non-surgical spinal decompression may be discussed after
-              evaluation for lower back or neck pain, sciatica, radiating pain
-              into the arms or legs, bulging, herniated, or degenerative discs,
-              spinal stenosis, post-operative concerns, and lumbar or cervical
-              syndromes.
+              When disc-related neck or low back problems limit what you can do,
+              gentle non-surgical spinal decompression may be discussed after
+              evaluation — for sciatica, radiating pain, bulging or herniated
+              discs, degenerative disc concerns, and related syndromes.
             </p>
           </div>
           <div className="media-frame media-frame-hero">
@@ -150,20 +149,17 @@ export default function SpinalDecompressionPage() {
 
           <p style={{ marginTop: "2rem" }}>
             Questions about whether spinal decompression is appropriate for you?
-            Contact our Sturgeon Bay office.
+            Request an appointment with our Sturgeon Bay team.
           </p>
           <div className="btn-row">
-            <a className="btn btn-gold" href={`tel:${site.phoneTel}`}>
+            <Link className="btn btn-gold" href="/appointment">
+              Request an Appointment
+            </Link>
+            <a className="btn btn-outline" href={`tel:${site.phoneTel}`}>
               Call {site.phone}
             </a>
-            <Link className="btn btn-outline" href="/appointment">
-              Appointment info
-            </Link>
             <Link className="btn btn-outline" href="/services">
               All services
-            </Link>
-            <Link className="btn btn-outline" href="/contact">
-              Contact & hours
             </Link>
           </div>
         </div>

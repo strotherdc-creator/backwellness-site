@@ -5,7 +5,7 @@ import { site } from "@/lib/site";
 export const metadata: Metadata = {
   title: "PiezoWave Therapy (MyACT)",
   description:
-    "PiezoWave Myofascial Acoustic Compression Therapy (MyACT) in Sturgeon Bay, WI at Staudenmaier Chiropractic Wellness Center, SC.",
+    "PiezoWave therapy in Sturgeon Bay, WI — a supportive option for stubborn muscle, tendon, and joint problems when chiropractic care alone may not be enough.",
 };
 
 const advantages = [
@@ -87,7 +87,7 @@ const faqs: { q: string; a: string[] }[] = [
   {
     q: "Is it safe?",
     a: [
-      "PiezoWave Pain Treatment is regarded as a safe, 100% non-invasive alternative to invasive procedures such as surgery and injections when used appropriately.",
+      "PiezoWave is a non-invasive option that may be considered as an alternative to more invasive procedures such as surgery and injections when used appropriately. Suitability depends on your evaluation.",
     ],
   },
   {
@@ -112,12 +112,11 @@ export default function PiezoWavePage() {
           <span className="eyebrow">Myofascial Acoustic Compression Therapy</span>
           <h1>PiezoWave Therapy (MyACT) in Sturgeon Bay</h1>
           <p className="muted prose">
-            Myofascial Acoustic Compression Therapy (MyACT) is widely used in
-            the treatment of acute and chronic pain in muscles, tendons, and
-            joints. At {site.name}, acoustic waves target tissue at varying
-            depths to compress and manipulate tissue — a focused, precise deep
-            tissue approach that can support circulation and pain relief as part
-            of healing.
+            PiezoWave (Myofascial Acoustic Compression Therapy) is a tool{" "}
+            {site.doctor.displayName} may recommend for stubborn muscle, tendon,
+            and joint problems. Acoustic waves target tissue at varying depths —
+            a focused option that can support comfort and mobility as part of a
+            broader care plan, not a stand-alone brand promise.
           </p>
         </div>
       </section>
@@ -171,12 +170,11 @@ export default function PiezoWavePage() {
 
           <h2>PiezoWave2 pain treatment</h2>
           <p>
-            What makes PiezoWave2 unique is that it is one of the few modern
-            technologies that can work well when an injury reaches a chronic,
-            non-healing state. It helps restore strength and mobility to injured
-            ligaments and muscles. We are the only facility in the entire area
-            that offers this technology, and we are dedicated to helping
-            patients get back to a healthy and happy lifestyle.
+            PiezoWave can be useful when an injury has become stubborn or
+            slow to settle. It may help support strength and mobility in
+            affected soft tissue as part of an individualized plan. Ask our
+            Sturgeon Bay team whether this option fits your situation after
+            examination — results vary, and it is not a guaranteed cure.
           </p>
           <div className="notice">
             <p style={{ margin: 0 }}>
@@ -198,16 +196,16 @@ export default function PiezoWavePage() {
           </div>
 
           <p style={{ marginTop: "2rem" }}>
-            Questions about details of the treatment, side effects, or payment
-            options? Contact us today.
+            Questions about treatment details, side effects, or payment options?
+            Request an appointment or call our Sturgeon Bay office.
           </p>
           <div className="btn-row">
-            <a className="btn btn-gold" href={`tel:${site.phoneTel}`}>
+            <Link className="btn btn-gold" href="/appointment">
+              Request an Appointment
+            </Link>
+            <a className="btn btn-outline" href={`tel:${site.phoneTel}`}>
               Call {site.phone}
             </a>
-            <Link className="btn btn-outline" href="/contact">
-              Contact & hours
-            </Link>
             <Link className="btn btn-outline" href="/services">
               All services
             </Link>

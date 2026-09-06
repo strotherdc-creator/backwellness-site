@@ -1,11 +1,12 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { site } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Chiropractic Care",
   description:
-    "Chiropractic care in Sturgeon Bay, WI at Staudenmaier Chiropractic Wellness Center, SC — spinal alignment and nervous system-focused care to help you get your lifestyle back.",
+    "Chiropractic care in Sturgeon Bay, WI at Staudenmaier Chiropractic Wellness Center, SC — personalized spinal adjustments to help Door County patients move better and live better.",
 };
 
 export default function ChiropracticPage() {
@@ -13,17 +14,29 @@ export default function ChiropracticPage() {
 
   return (
     <>
-      <section className="page-hero">
-        <div className="container">
-          <span className="eyebrow">{site.tagline}</span>
-          <h1>Chiropractic Care in Sturgeon Bay</h1>
-          <p className="muted prose">
-            Chiropractic care is the practice of using spinal alignment to
-            alleviate a wide variety of physical ailments — including muscle
-            strain, neck pain, chronic back pain, and more. By adjusting the
-            position of the spinal column toward its proper shape, chiropractic
-            offers a non-invasive approach to pain relief.
-          </p>
+      <section className="page-hero page-hero-media">
+        <div className="container page-hero-grid">
+          <div>
+            <span className="eyebrow">{site.tagline}</span>
+            <h1>Chiropractic Care in Sturgeon Bay</h1>
+            <p className="muted prose">
+              Chiropractic care is the practice of using spinal alignment to
+              alleviate a wide variety of physical ailments — including muscle
+              strain, neck pain, chronic back pain, and more. By adjusting the
+              position of the spinal column toward its proper shape, chiropractic
+              offers a non-invasive approach to pain relief.
+            </p>
+          </div>
+          <div className="media-frame media-frame-hero">
+            <Image
+              src="/images/chiropractic-care.jpg"
+              alt="Dr. Luke performing a chiropractic adjustment for a patient in Sturgeon Bay"
+              width={1280}
+              height={1700}
+              className="media-img"
+              priority
+            />
+          </div>
         </div>
       </section>
 
@@ -47,31 +60,41 @@ export default function ChiropracticPage() {
 
           <h2>How chiropractic works</h2>
           <p>
-            Chiropractic is based on the scientific fact that your nervous
-            system controls the function of every cell, tissue, organ, and
-            system of your body. Your nervous system consists of your brain,
-            spinal cord, and millions of nerves.
+            Your nervous system helps coordinate how your body moves and
+            functions. It includes your brain, spinal cord, and the nerves that
+            connect throughout your body. Your spinal column protects the spinal
+            cord while allowing everyday motion.
           </p>
           <p>
-            While your brain is protected by the skull, your spinal cord is
-            protected by the 24 moving bones of the spine. Everyday activities
-            can cause these spinal bones to lose their normal position or
-            motion. That can result in nervous system dysfunction. The
-            chiropractic approach is to detect, reduce, and help prevent that
-            dysfunction.
+            Daily activities can leave spinal joints stiff, irritated, or out of
+            their preferred motion. When that happens, you may feel pain, limited
+            mobility, or related muscle tension. Chiropractic care focuses on
+            evaluating those areas and using gentle adjustments to support better
+            movement and comfort.
           </p>
+
+          <div className="media-inline">
+            <Image
+              src="/images/chiropractic-adjustment-2.jpg"
+              alt="Close-up of a chiropractic adjustment with hands supporting the patient"
+              width={1280}
+              height={1700}
+              className="media-img"
+            />
+          </div>
 
           <h2>What to expect</h2>
           <p>
-            After discussing your concerns and evaluating your spine and nervous
-            system function, we help design a care program tailored to you. The
-            goal is not only to address pain, but to support better function so
-            you can get your lifestyle back.
+            After discussing your concerns and evaluating your spine and how you
+            move, we help design a care program tailored to you. The goal is not
+            only to address pain, but to support better function so you can move
+            better in the activities that matter at home, work, and around Door
+            County.
           </p>
           <p>
-            You do not have to live in pain. We are here to help you get your
-            life back with chiropractic care focused on spinal alignment and
-            nervous system function.
+            You do not have to push through every day in pain. {doctor.displayName}{" "}
+            and our hometown team are here to help with chiropractic care focused
+            on spinal alignment, comfort, and practical next steps.
           </p>
 
           <h2>Training &amp; credentials</h2>
@@ -94,18 +117,18 @@ export default function ChiropracticPage() {
 
           <div className="notice" style={{ marginTop: "1.5rem" }}>
             <p style={{ margin: 0 }}>
-              Ready to get your lifestyle back? Call our Sturgeon Bay office to
-              schedule with {doctor.displayName} and the team.
+              Ready to move better? Call our Sturgeon Bay office to schedule with{" "}
+              {doctor.displayName} and the team.
             </p>
           </div>
 
           <div className="btn-row" style={{ marginTop: "1.5rem" }}>
-            <a className="btn btn-gold" href={`tel:${site.phoneTel}`}>
+            <Link className="btn btn-gold" href="/appointment">
+              Request an Appointment
+            </Link>
+            <a className="btn btn-outline" href={`tel:${site.phoneTel}`}>
               Call {site.phone}
             </a>
-            <Link className="btn btn-outline" href="/appointment">
-              Appointment info
-            </Link>
             <Link className="btn btn-outline" href="/services">
               All services
             </Link>

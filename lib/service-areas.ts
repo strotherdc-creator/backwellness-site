@@ -24,7 +24,7 @@ export const serviceAreas: ServiceArea[] = [
         "Our clinic is based in Sturgeon Bay, so local patients can reach us without a long drive across the peninsula.",
       driveContext: "We are right here in town at 30 North 18th Avenue Suite 3.",
       careNote:
-        "Whether you are dealing with neck or back discomfort, headaches, or want supportive wellness care, our Sturgeon Bay team is here to help you get your lifestyle back.",
+        "Whether you are dealing with neck or back discomfort, headaches, or want supportive wellness care, our Sturgeon Bay team is here to help you move better.",
     },
   },
   {
