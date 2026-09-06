@@ -23,26 +23,14 @@ const staffPhotos: Record<string, { src: string; alt: string }> = {
 export default function AboutPage() {
   return (
     <>
-      <section className="page-hero page-hero-media">
-        <div className="container page-hero-grid">
-          <div>
-            <span className="eyebrow">Meet the team</span>
-            <h1>About {site.shortName}</h1>
-            <p className="muted prose">
-              Caring chiropractic wellness in Sturgeon Bay — helping Door County
-              patients move better and stay active.
-            </p>
-          </div>
-          <div className="media-frame media-frame-hero">
-            <Image
-              src="/images/team-meet.jpg"
-              alt={`${site.doctor.name} at Staudenmaier Chiropractic Wellness Center`}
-              width={640}
-              height={800}
-              className="media-img"
-              priority
-            />
-          </div>
+      <section className="page-hero">
+        <div className="container">
+          <span className="eyebrow">Meet the team</span>
+          <h1>About {site.shortName}</h1>
+          <p className="muted prose">
+            Hometown chiropractic care in Sturgeon Bay — helping Door County
+            patients move better and stay active.
+          </p>
         </div>
       </section>
 
@@ -87,15 +75,6 @@ export default function AboutPage() {
           </article>
 
           <article className="card card-lift">
-            <div className="team-photo team-photo-sm">
-              <Image
-                src="/images/luke-circle.jpg"
-                alt={site.doctor.name}
-                width={280}
-                height={280}
-                className="media-img media-img-round"
-              />
-            </div>
             <h2>Memberships & associations</h2>
             <ul className="info-list">
               {site.doctor.memberships.map((item) => (
