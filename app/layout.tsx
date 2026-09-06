@@ -1,9 +1,17 @@
 import type { Metadata } from "next";
+import { Source_Sans_3 } from "next/font/google";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import LocalBusinessJsonLd from "@/components/LocalBusinessJsonLd";
 import { site } from "@/lib/site";
 import "./globals.css";
+
+const sourceSans = Source_Sans_3({
+  subsets: ["latin"],
+  weight: ["400", "600", "700"],
+  variable: "--font-source-sans",
+  display: "swap",
+});
 
 const defaultTitle = `${site.name} | Sturgeon Bay Chiropractor`;
 const defaultDescription =
@@ -45,8 +53,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body>
+    <html lang="en" className={sourceSans.variable}>
+      <body className={sourceSans.className}>
         <LocalBusinessJsonLd />
         <Header />
         <main className="site-main">{children}</main>
