@@ -17,7 +17,17 @@
   --max: 1140px;
   --space-section: clamp(3.25rem, 6vw, 5.25rem);
   --space-block: clamp(1.25rem, 2.5vw, 2rem);
-  --font: "Segoe UI", system-ui, -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
+  --font: var(--font-source-sans), "Segoe UI", system-ui, -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
+  --text-body: clamp(1.0625rem, 0.35vw + 1rem, 1.125rem);
+  --text-lead: clamp(1.125rem, 0.6vw + 1rem, 1.3rem);
+  --text-small: clamp(0.875rem, 0.2vw + 0.82rem, 0.9375rem);
+  --text-kicker: clamp(0.72rem, 0.15vw + 0.68rem, 0.8rem);
+  --text-h1-hero: clamp(2.05rem, 5.2vw + 0.4rem, 3.5rem);
+  --text-h1-page: clamp(1.85rem, 3.2vw + 0.6rem, 2.75rem);
+  --text-h2: clamp(1.5rem, 2.2vw + 0.7rem, 2.25rem);
+  --text-h3: clamp(1.15rem, 0.6vw + 1rem, 1.28rem);
+  --leading-body: 1.65;
+  --leading-tight: 1.2;
 }
 
 *,
@@ -33,9 +43,10 @@ html {
 body {
   margin: 0;
   font-family: var(--font);
+  font-size: var(--text-body);
   color: var(--ink);
   background: var(--white);
-  line-height: 1.65;
+  line-height: var(--leading-body);
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
 }
@@ -51,9 +62,9 @@ img {
 }
 
 h1, h2, h3, h4 {
-  line-height: 1.18;
+  line-height: var(--leading-tight);
   margin: 0 0 0.85rem;
-  letter-spacing: -0.025em;
+  letter-spacing: -0.02em;
   color: var(--ink);
   font-weight: 700;
 }
@@ -136,12 +147,12 @@ ul {
 
 .logo-name {
   font-weight: 700;
-  font-size: 1.08rem;
-  letter-spacing: -0.02em;
+  font-size: clamp(1rem, 0.2vw + 0.96rem, 1.08rem);
+  letter-spacing: -0.015em;
 }
 
 .logo-sub {
-  font-size: 0.72rem;
+  font-size: var(--text-kicker);
   font-weight: 700;
   letter-spacing: 0.06em;
   text-transform: uppercase;
@@ -179,7 +190,7 @@ ul {
 .primary-nav a {
   padding: 0.5rem 0.78rem;
   border-radius: 999px;
-  font-size: 0.9rem;
+  font-size: clamp(0.95rem, 0.15vw + 0.9rem, 1rem);
   font-weight: 600;
   color: var(--ink);
   transition: background 0.15s ease, color 0.15s ease;
@@ -201,6 +212,7 @@ ul {
   gap: 0.4rem;
   padding: 0.88rem 1.4rem;
   border-radius: 999px;
+  font-size: clamp(0.95rem, 0.2vw + 0.9rem, 1.05rem);
   font-weight: 700;
   border: 2px solid transparent;
   transition: transform 0.15s ease, background 0.15s ease, color 0.15s ease, box-shadow 0.15s ease;
@@ -316,9 +328,9 @@ ul {
   border-radius: 999px;
   background: rgba(247, 183, 51, 0.18);
   color: #ffe09a;
-  font-size: 0.76rem;
+  font-size: var(--text-kicker);
   font-weight: 700;
-  letter-spacing: 0.09em;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
 }
 
@@ -328,14 +340,17 @@ ul {
 }
 
 .hero h1 {
-  font-size: clamp(2.35rem, 5.4vw, 3.75rem);
-  max-width: 16ch;
+  font-size: var(--text-h1-hero);
+  line-height: 1.12;
+  max-width: 14ch;
   margin-bottom: 1.1rem;
+  letter-spacing: -0.02em;
   color: var(--white);
 }
 
 .hero-lead {
-  font-size: 1.12rem;
+  font-size: var(--text-lead);
+  line-height: 1.55;
   max-width: 38rem;
   color: rgba(255, 255, 255, 0.9);
   margin-bottom: 0;
@@ -365,14 +380,14 @@ ul {
 
 .hero-card h2 {
   color: #ffe09a;
-  font-size: 1.05rem;
+  font-size: var(--text-h3);
   margin-bottom: 0.35rem;
 }
 
 .hero-card li {
   padding: 0.48rem 0;
   border-bottom: 1px solid rgba(255, 255, 255, 0.12);
-  font-size: 0.96rem;
+  font-size: var(--text-body);
 }
 
 .hero-card li:last-child { border-bottom: 0; }
@@ -398,16 +413,17 @@ ul {
 }
 
 .section-head h2 {
-  font-size: clamp(1.8rem, 3.2vw, 2.45rem);
+  font-size: var(--text-h2);
+  line-height: var(--leading-tight);
   color: var(--blue-900);
 }
 
 .section-kicker {
   margin: 0 0 0.55rem;
   color: var(--blue-600);
-  font-size: 0.78rem;
+  font-size: var(--text-kicker);
   font-weight: 700;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
 }
 
@@ -469,7 +485,10 @@ ul {
   color: var(--blue-600);
 }
 
-.card h3 { font-size: 1.18rem; color: var(--blue-900); }
+.card h3 {
+  font-size: var(--text-h3);
+  color: var(--blue-900);
+}
 
 .card-icon {
   width: 46px;
@@ -480,7 +499,7 @@ ul {
   background: linear-gradient(145deg, rgba(17, 117, 188, 0.14), rgba(247, 183, 51, 0.12));
   color: var(--blue-900);
   font-weight: 800;
-  font-size: 0.85rem;
+  font-size: var(--text-kicker);
   letter-spacing: 0.04em;
   margin-bottom: 1rem;
 }
@@ -496,7 +515,7 @@ ul {
   border: 1px solid var(--line);
   border-radius: 999px;
   padding: 0.45rem 0.85rem;
-  font-size: 0.92rem;
+  font-size: var(--text-small);
   font-weight: 600;
 }
 
@@ -524,7 +543,9 @@ ul {
 }
 
 .page-hero h1 {
-  font-size: clamp(2rem, 4vw, 2.9rem);
+  font-size: var(--text-h1-page);
+  line-height: var(--leading-tight);
+  letter-spacing: -0.02em;
   color: var(--blue-900);
 }
 
@@ -595,13 +616,27 @@ ul {
   border: 3px solid rgba(17, 117, 188, 0.15);
 }
 
-.prose { max-width: 48rem; }
+.prose {
+  max-width: 48rem;
+  font-size: var(--text-body);
+  line-height: var(--leading-body);
+}
 .prose h2 {
   margin-top: 2.35rem;
   color: var(--blue-900);
-  font-size: clamp(1.35rem, 2.4vw, 1.65rem);
+  font-size: clamp(1.28rem, 1.8vw + 0.7rem, 1.55rem);
+  line-height: var(--leading-tight);
 }
-.prose h3 { margin-top: 1.6rem; color: var(--ink); }
+.prose h3 {
+  margin-top: 1.6rem;
+  color: var(--ink);
+  font-size: var(--text-h3);
+}
+.prose p,
+.prose li {
+  font-size: var(--text-body);
+  line-height: var(--leading-body);
+}
 .prose ul {
   list-style: disc;
   padding-left: 1.25rem;
@@ -614,7 +649,7 @@ ul {
 .role {
   color: var(--blue-600);
   font-weight: 700;
-  font-size: 0.86rem;
+  font-size: var(--text-kicker);
   text-transform: uppercase;
   letter-spacing: 0.05em;
 }
@@ -696,7 +731,7 @@ ul {
 
 .site-footer h3 {
   color: #ffe09a;
-  font-size: 0.92rem;
+  font-size: var(--text-kicker);
   letter-spacing: 0.07em;
   text-transform: uppercase;
   margin-bottom: 1rem;
@@ -714,7 +749,7 @@ ul {
   justify-content: space-between;
   gap: 1rem;
   padding: 0.32rem 0;
-  font-size: 0.95rem;
+  font-size: var(--text-small);
 }
 
 .footer-links li { display: block; }
@@ -728,7 +763,7 @@ ul {
   justify-content: space-between;
   gap: 0.5rem;
   padding-top: 1.25rem;
-  font-size: 0.88rem;
+  font-size: var(--text-small);
   color: rgba(255, 255, 255, 0.7);
 }
 
@@ -774,7 +809,10 @@ ul {
   .header-cta { width: 100%; }
 
   .hero { padding: 3rem 0 2.75rem; }
-  .hero h1 { max-width: none; }
+  .hero h1 {
+    max-width: none;
+    letter-spacing: -0.02em;
+  }
 
   .section { padding: clamp(2.75rem, 8vw, 3.75rem) 0; }
 
@@ -784,10 +822,29 @@ ul {
 
 @media (max-width: 560px) {
   .container { width: min(100% - 1.5rem, var(--max)); }
-  .btn { width: 100%; }
+  .btn {
+    width: 100%;
+    font-size: max(0.95rem, var(--text-body));
+  }
   .btn-row { gap: 0.65rem; }
   .hero-card { padding: 0.95rem; }
   .card { padding: 1.25rem; }
+
+  h1, h2, h3, h4,
+  .hero h1,
+  .page-hero h1,
+  .section-head h2 {
+    letter-spacing: -0.015em;
+  }
+
+  .primary-nav a {
+    font-size: max(0.95rem, var(--text-body));
+    padding: 0.65rem 0.9rem;
+  }
+
+  .logo-name {
+    font-size: 1rem;
+  }
 }
 
 
@@ -805,7 +862,7 @@ ul {
   justify-content: center;
   gap: 0.55rem 0.85rem;
   text-align: center;
-  font-size: 0.92rem;
+  font-size: var(--text-small);
   font-weight: 700;
   color: var(--blue-900);
   letter-spacing: 0.01em;
@@ -819,7 +876,7 @@ ul {
 @media (max-width: 560px) {
   .trust-strip-inner {
     gap: 0.35rem 0.55rem;
-    font-size: 0.84rem;
+    font-size: var(--text-small);
   }
 }
 
@@ -900,7 +957,7 @@ ul {
 
 .review-quote p {
   margin: 0;
-  font-size: clamp(1.05rem, 2.2vw, 1.2rem);
+  font-size: var(--text-lead);
   line-height: 1.55;
   color: var(--ink);
 }
@@ -908,7 +965,7 @@ ul {
 .review-byline {
   display: grid;
   gap: 0.15rem;
-  font-size: 0.95rem;
+  font-size: var(--text-small);
 }
 
 .review-controls {
