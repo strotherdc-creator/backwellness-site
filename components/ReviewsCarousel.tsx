@@ -1,13 +1,13 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import {
   googleFiveStarReviews,
   googleReviewsSummary,
   type GoogleReview,
 } from "@/lib/reviews";
 
-const INTERVAL_MS = 7000;
+const INTERVAL_MS = 5000;
 
 function Stars({ rating }: { rating: number }) {
   return (
@@ -39,29 +39,57 @@ export default function ReviewsCarousel({
   reviews?: GoogleReview[];
 }) {
   const items = reviews.filter((r) => r.rating === 5);
+  const count = items.length;
   const [index, setIndex] = useState(0);
   const [paused, setPaused] = useState(false);
+  const [progress, setProgress] = useState(0);
   const reducedMotion = usePrefersReducedMotion();
+  const rootRef = useRef<HTMLDivElement>(null);
+  const startedAt = useRef(Date.now());
+
+  const go = useCallback(
+    (next: number) => {
+      if (count <= 0) return;
+      setIndex(((next % count) + count) % count);
+      startedAt.current = Date.now();
+      setProgress(0);
+    },
+    [count],
+  );
 
   useEffect(() => {
-    if (items.length <= 1 || paused || reducedMotion) return;
-    const id = window.setInterval(() => {
-      setIndex((i) => (i + 1) % items.length);
-    }, INTERVAL_MS);
-    return () => window.clearInterval(id);
-  }, [items.length, paused, reducedMotion]);
+    if (count <= 1 || paused || reducedMotion) return;
 
-  if (items.length === 0) return null;
+    startedAt.current = Date.now();
+    setProgress(0);
+    const tick = window.setInterval(() => {
+      const elapsed = Date.now() - startedAt.current;
+      setProgress(Math.min(1, elapsed / INTERVAL_MS));
+      if (elapsed >= INTERVAL_MS) {
+        startedAt.current = Date.now();
+        setProgress(0);
+        setIndex((i) => (i + 1) % count);
+      }
+    }, 50);
+
+    return () => window.clearInterval(tick);
+  }, [count, paused, reducedMotion]);
+
+  if (count === 0) return null;
 
   const review = items[index];
+  const autoPlaying = !paused && !reducedMotion && count > 1;
 
   return (
     <div
+      ref={rootRef}
       className="reviews-carousel"
-      onMouseEnter={() => setPaused(true)}
-      onMouseLeave={() => setPaused(false)}
       onFocusCapture={() => setPaused(true)}
-      onBlurCapture={() => setPaused(false)}
+      onBlurCapture={(e) => {
+        const next = e.relatedTarget as Node | null;
+        if (next && rootRef.current?.contains(next)) return;
+        setPaused(false);
+      }}
       aria-roledescription="carousel"
       aria-label="5-star Google reviews"
     >
@@ -71,36 +99,54 @@ export default function ReviewsCarousel({
           Showing 5-star Google reviews · clinic averages{" "}
           <strong>{googleReviewsSummary.rating}</strong> from{" "}
           <strong>{googleReviewsSummary.count}</strong> Google reviews
-          {reducedMotion ? " · auto-rotate paused (reduced motion)" : ""}
+          {reducedMotion
+            ? " · auto-scroll off (reduced motion)"
+            : autoPlaying
+              ? " · auto-scrolling"
+              : " · auto-scroll paused"}
         </p>
       </div>
 
-      <figure
-        className="review-slide card"
-        key={`${review.author}-${index}`}
-        aria-live={reducedMotion ? "polite" : "off"}
+      <div className="review-viewport">
+        <figure
+          className={`review-slide card${reducedMotion ? "" : " review-slide-animate"}`}
+          key={`${review.author}-${index}`}
+          aria-live="polite"
+        >
+          <Stars rating={review.rating} />
+          <blockquote className="review-quote">
+            <p>“{review.text}”</p>
+          </blockquote>
+          <figcaption className="review-byline">
+            <strong>{review.author}</strong>
+            <span className="muted">
+              {review.source}
+              {review.relativeTime ? ` · ${review.relativeTime}` : ""}
+            </span>
+          </figcaption>
+        </figure>
+      </div>
+
+      <div
+        className="review-progress"
+        role="presentation"
+        aria-hidden
       >
-        <Stars rating={review.rating} />
-        <blockquote className="review-quote">
-          <p>“{review.text}”</p>
-        </blockquote>
-        <figcaption className="review-byline">
-          <strong>{review.author}</strong>
-          <span className="muted">
-            {review.source}
-            {review.relativeTime ? ` · ${review.relativeTime}` : ""}
-          </span>
-        </figcaption>
-      </figure>
+        <span
+          className="review-progress-bar"
+          style={{
+            width: `${(autoPlaying ? progress : 0) * 100}%`,
+            transition: reducedMotion ? "none" : undefined,
+          }}
+        />
+      </div>
 
       <div className="review-controls">
         <button
           type="button"
           className="btn btn-outline"
           aria-label="Previous review"
-          onClick={() =>
-            setIndex((i) => (i - 1 + items.length) % items.length)
-          }
+          onClick={() => go(index - 1)}
         >
           Previous
         </button>
@@ -113,7 +159,7 @@ export default function ReviewsCarousel({
               aria-selected={i === index}
               aria-label={`Show review by ${item.author}`}
               className={i === index ? "dot active" : "dot"}
-              onClick={() => setIndex(i)}
+              onClick={() => go(i)}
             />
           ))}
         </div>
@@ -121,7 +167,7 @@ export default function ReviewsCarousel({
           type="button"
           className="btn btn-outline"
           aria-label="Next review"
-          onClick={() => setIndex((i) => (i + 1) % items.length)}
+          onClick={() => go(index + 1)}
         >
           Next
         </button>
