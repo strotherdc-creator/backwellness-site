@@ -169,10 +169,10 @@ export default function HomePage() {
           <div className="split-media">
             <div className="media-frame">
               <Image
-                src="/images/highlighted-spine.webp"
-                alt="Personalized chiropractic care with Dr. Luke"
-                width={720}
-                height={540}
+                src="/images/luke-portrait.jpg"
+                alt="Dr. Luke Staudenmaier, chiropractor in Sturgeon Bay"
+                width={640}
+                height={800}
                 className="media-img"
               />
             </div>

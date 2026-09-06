@@ -29,16 +29,16 @@ export default function AboutPage() {
             <span className="eyebrow">Meet the team</span>
             <h1>About {site.shortName}</h1>
             <p className="muted prose">
-              Caring chiropractic wellness in Sturgeon Bay — helping patients get
-              their lifestyle back.
+              Caring chiropractic wellness in Sturgeon Bay — helping Door County
+              patients move better and stay active.
             </p>
           </div>
           <div className="media-frame media-frame-hero">
             <Image
-              src="/images/team.jpg"
-              alt={`${site.doctor.name} and the clinic team`}
-              width={720}
-              height={540}
+              src="/images/team-meet.jpg"
+              alt={`${site.doctor.name} at Staudenmaier Chiropractic Wellness Center`}
+              width={640}
+              height={800}
               className="media-img"
               priority
             />
@@ -51,7 +51,7 @@ export default function AboutPage() {
           <article className="card team-card card-lift">
             <div className="team-photo">
               <Image
-                src="/images/team-meet.jpg"
+                src="/images/luke-portrait.jpg"
                 alt={site.doctor.name}
                 width={480}
                 height={600}
