@@ -167,7 +167,7 @@ export default function HomePage() {
             <p className="section-kicker">Google reviews</p>
             <h2>What patients are saying</h2>
             <p className="muted">
-              5-star Google reviews only — the carousel rotates automatically.
+              Real 5-star Google reviews from our patients.
             </p>
           </div>
           <ReviewsCarousel />

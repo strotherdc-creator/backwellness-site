@@ -96,14 +96,8 @@ export default function ReviewsCarousel({
       <div className="reviews-carousel-meta">
         <Stars rating={5} />
         <p className="muted" style={{ margin: 0 }}>
-          Showing 5-star Google reviews · clinic averages{" "}
-          <strong>{googleReviewsSummary.rating}</strong> from{" "}
-          <strong>{googleReviewsSummary.count}</strong> Google reviews
-          {reducedMotion
-            ? " · auto-scroll off (reduced motion)"
-            : autoPlaying
-              ? " · auto-scrolling"
-              : " · auto-scroll paused"}
+          Google rating <strong>{googleReviewsSummary.rating}</strong> ·{" "}
+          <strong>{googleReviewsSummary.count}</strong> reviews
         </p>
       </div>
 

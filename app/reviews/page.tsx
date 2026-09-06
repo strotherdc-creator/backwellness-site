@@ -20,8 +20,7 @@ export default function ReviewsPage() {
           <span className="eyebrow">Patient feedback</span>
           <h1>Reviews</h1>
           <p className="muted prose">
-            Real 5-star Google reviews from patients of {site.shortName}. The
-            carousel rotates automatically — hover or focus to pause.
+            Real 5-star Google reviews from patients of {site.shortName}.
           </p>
         </div>
       </section>
