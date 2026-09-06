@@ -7,7 +7,7 @@ import {
   type GoogleReview,
 } from "@/lib/reviews";
 
-const INTERVAL_MS = 5000;
+const INTERVAL_MS = 10000;
 
 function Stars({ rating }: { rating: number }) {
   return (
