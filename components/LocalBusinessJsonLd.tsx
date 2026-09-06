@@ -29,7 +29,7 @@ export default function LocalBusinessJsonLd() {
     url: baseUrl,
     telephone: site.phone,
     email: site.email,
-    image: `${baseUrl}/images/highlighted-spine.webp`,
+    image: `${baseUrl}/images/og-default.jpg`,
     address: {
       "@type": "PostalAddress",
       streetAddress: site.address.line1,
