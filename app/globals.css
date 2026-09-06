@@ -796,11 +796,46 @@ ul {
   opacity: 1;
 }
 
+.review-viewport {
+  overflow: hidden;
+}
+
 .review-slide {
   min-height: 14rem;
   display: grid;
   gap: 1rem;
   align-content: start;
+}
+
+.review-slide-animate {
+  animation: review-slide-in 0.45s ease;
+}
+
+@keyframes review-slide-in {
+  from {
+    opacity: 0;
+    transform: translateX(1.25rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.review-progress {
+  height: 0.28rem;
+  border-radius: 999px;
+  background: rgba(12, 82, 132, 0.14);
+  overflow: hidden;
+}
+
+.review-progress-bar {
+  display: block;
+  height: 100%;
+  width: 0;
+  border-radius: inherit;
+  background: var(--blue-600);
+  transition: width 50ms linear;
 }
 
 .review-quote {
@@ -950,6 +985,14 @@ ul {
   }
 
   .review-dots .dot.active {
+    background: var(--blue-600);
+  }
+
+  .review-progress {
+    background: rgba(142, 197, 239, 0.18);
+  }
+
+  .review-progress-bar {
     background: var(--blue-600);
   }
 
