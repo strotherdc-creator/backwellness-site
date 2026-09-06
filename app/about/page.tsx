@@ -165,7 +165,7 @@ export default function AboutPage() {
             <p className="section-kicker">Google reviews</p>
             <h2>What patients say</h2>
             <p className="muted">
-              5-star Google reviews — auto-rotates (pauses on hover or keyboard focus).
+              Real 5-star Google reviews from our patients.
             </p>
           </div>
           <ReviewsCarousel />
